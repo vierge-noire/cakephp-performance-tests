@@ -1,0 +1,5 @@
+/vendor/
+/tmp/
+/.idea/
+cff_analysis
+test_cff_analysis

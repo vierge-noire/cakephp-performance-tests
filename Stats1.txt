@@ -1,0 +1,123 @@
+
+###############################################
+With 10 tables and x Fixtures per table
+
+bin/cake bake fixture all -f -n 300 && vendor/bin/phpunit --testsuite d --repeat 3 && vendor/bin/phpunit --testsuite dp --repeat 3 && vendor/bin/phpunit --testsuite s --repeat 3
+
+
+Iter 20:
+2.72 8.58 11.98
+
+Iter 50:
+4 9.61 28.1
+
+Iter 100:
+4 11.44 81
+
+Iter 200:
+11.13 28.09 228
+
+Iter 300:
+7.21 43.55 465.6
+
+
+
+##################################
+With n tables and 30 tests per table with CakePHP Fixture Factories listener
+
+bin/cake migrations migrate && bin/cake bake model all -q --no-fixture --no-test && bin/cake bake fixture all -q -n 30 && vendor/bin/phpunit --testsuite d && vendor/bin/phpunit --testsuite dp && vendor/bin/phpunit --testsuite s
+
+Iter 5:
+2.14 4.05 4.11
+
+Iter 10:
+2.02 2.74 6.51
+
+Iter 20:
+1.78 3.05 9.85
+
+Iter 50:
+2.32 3.45 19.64
+
+Iter 100
+2.82 3.93 27.9
+
+Iter 200
+1.95 2.34 45.35
+
+Iter 300
+2.68 3.92 75.6
+
+##################################
+With n tables and 30 tests per table with CakePHP listener
+
+vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml
+
+Iter 5:
+3.79
+
+Iter 10:
+7.4
+
+Iter 20:
+7.63
+
+Iter 50:
+11.5
+
+Iter 100
+32.71
+
+Iter 200
+50.64
+
+Iter 300
+60
+
+##################################
+With n tables and 30 tests per table with CakePHP listener and 5 iteration per test
+vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat 5
+
+Iter 50
+14.87
+
+Iter 100
+24.5
+
+Iter 150
+38.93
+
+Iter 200
+46.45
+
+Iter 250
+54.96
+
+Iter 300
+67.8
+
+##################################
+With n tables and 30 tests per table with CakePHP Fixture Factories listener
+
+bin/cake migrations migrate && vendor/bin/phpunit --testsuite d --repeat 100 && vendor/bin/phpunit --testsuite dp --repeat 100
+Iter 100
+28.55 182.4
+
+
+##################################
+Standard case: 10 tables per Test Case, 100 tables altogether (repeat 100) 30 tests (fixtures) per TestCase
+vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat 100
+6.82 minutes
+
+vendor/bin/phpunit --testsuite d --repeat 100 && vendor/bin/phpunit --testsuite dp --repeat 100
+Iter 100
+32.31 2.23 minutes
+
+##################################
+Standard case: 10 tables per Test Case, 100 tables altogether (repeat 100) 50 tests (fixtures) per TestCase
+vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat 100
+602.4
+
+vendor/bin/phpunit --testsuite d --repeat 100 && vendor/bin/phpunit --testsuite dp --repeat 100 && vendor/bin/phpunit --testsuite s --repeat 100
+37.88 206.4 819
+

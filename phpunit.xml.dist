@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true" processIsolation="false" stopOnFailure="false" bootstrap="tests/bootstrap.php">
+  <php>
+    <ini name="memory_limit" value="-1"/>
+    <ini name="apc.enable_cli" value="1"/>
+  </php>
+  <!-- Add any additional test suites you want to run here -->
+  <testsuites>
+    <testsuite name="d">
+<!--      <directory>tests/TestCase/</directory>-->
+        <file>tests/TestCase/DynamicFixturesTest.php</file>
+    </testsuite>
+    <testsuite name="dp">
+<!--      <directory>tests/TestCase/</directory>-->
+        <file>tests/TestCase/DynamicFixturesPersistedTest.php</file>
+    </testsuite>
+    <testsuite name="s">
+<!--      <directory>tests/TestCase/</directory>-->
+      <file>tests/TestCase/StaticFixturesTest.php</file>
+    </testsuite>
+    <!-- Add plugin test suites here. -->
+  </testsuites>
+  <!-- Setup a listener for fixtures -->
+  <listeners>
+    <listener class="CakephpFixtureFactories\TestSuite\FixtureInjector">
+      <arguments>
+        <object class="CakephpFixtureFactories\TestSuite\FixtureManager"/>
+      </arguments>
+    </listener>
+  </listeners>
+  <!-- Ignore vendor tests in code coverage reports -->
+  <filter>
+    <whitelist>
+      <directory suffix=".php">src/</directory>
+      <directory suffix=".php">plugins/*/src/</directory>
+      <exclude>
+        <file>src/Console/Installer.php</file>
+      </exclude>
+    </whitelist>
+  </filter>
+</phpunit>

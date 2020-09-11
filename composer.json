@@ -1,0 +1,32 @@
+{
+    "name": "vierge-noire/cff-performance",
+    "description": "Performance Analysis of the CakePHP Fixture Factories plugin.",
+    "type": "project",
+    "require": {
+        "pakacuda/cakephp-fixture-factories": "dev-add_static_fixture_test",
+        "cakephp/bake": "^2.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juan Pablo Ramirez",
+            "email": "pabloelcolombiano@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Test\\": "tests/",
+            "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
+        }
+    },
+    "scripts": {
+        "run-tests": "bash run_tests.sh",
+    }
+}

@@ -1,0 +1,44 @@
+name: GitHub CI
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        number-of-tables: ['100']
+        number-of-tests: ['30']
+
+    name: PHP 7.4 & ${{ number-of-tables }} Tables & ${{ number-of-tests }} Tests
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: mbstring, intl, apcu, pdo_mysql
+          ini-values: apc.enable_cli = 1
+          coverage: pcov
+
+      - name: Update composer
+        run: composer self-update
+
+      - name: Validate composer.json
+        run: composer validate
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-progress --no-suggest --prefer-stable
+
+      - name: Run tests
+        run: composer run-tests

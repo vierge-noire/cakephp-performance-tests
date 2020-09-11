@@ -1,0 +1,50 @@
+2020-09-08 10:21:07 Notice: Notice (8): Undefined variable: i in [/var/www/html/cff-performance/config/Migrations/20200208100000_initial_migration.php, line 25]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+InitialMigration::up() - ROOT/config/Migrations/20200208100000_initial_migration.php, line 25
+Phinx\Migration\Manager\Environment::executeMigration() - ROOT/vendor/robmorgan/phinx/src/Phinx/Migration/Manager/Environment.php, line 109
+Phinx\Migration\Manager::executeMigration() - ROOT/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php, line 383
+Phinx\Migration\Manager::migrate() - ROOT/vendor/robmorgan/phinx/src/Phinx/Migration/Manager.php, line 356
+Migrations\Migrations::run() - ROOT/vendor/cakephp/migrations/src/Migrations.php, line 328
+Migrations\Migrations::migrate() - ROOT/vendor/cakephp/migrations/src/Migrations.php, line 174
+CakephpFixtureFactories\TestSuite\Migrator::runAllMigrations() - ROOT/vendor/pakacuda/cakephp-fixture-factories/src/TestSuite/Migrator.php, line 56
+CakephpFixtureFactories\TestSuite\Migrator::migrate() - ROOT/vendor/pakacuda/cakephp-fixture-factories/src/TestSuite/Migrator.php, line 46
+include_once - ROOT/tests/bootstrap.php, line 54
+PHPUnit\Util\FileLoader::load() - ROOT/vendor/phpunit/phpunit/src/Util/FileLoader.php, line 59
+PHPUnit\Util\FileLoader::checkAndLoad() - ROOT/vendor/phpunit/phpunit/src/Util/FileLoader.php, line 47
+PHPUnit\TextUI\Command::handleBootstrap() - ROOT/vendor/phpunit/phpunit/src/TextUI/Command.php, line 1095
+PHPUnit\TextUI\Command::handleArguments() - ROOT/vendor/phpunit/phpunit/src/TextUI/Command.php, line 891
+PHPUnit\TextUI\Command::run() - ROOT/vendor/phpunit/phpunit/src/TextUI/Command.php, line 171
+PHPUnit\TextUI\Command::main() - ROOT/vendor/phpunit/phpunit/src/TextUI/Command.php, line 163
+[main] - ROOT/vendor/phpunit/phpunit/phpunit, line 61
+
+2020-09-08 10:23:17 Notice: Notice (8): Undefined variable: iteration in [/var/www/html/cff-performance/tests/TestCase/UniqueStaticFixturesTest.php, line 28]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+App\Test\TestCase\UniqueStaticFixturesTest::testUniqueStaticFixtures() - ROOT/tests/TestCase/UniqueStaticFixturesTest.php, line 28
+PHPUnit\Framework\TestCase::runTest() - ROOT/vendor/phpunit/phpunit/src/Framework/TestCase.php, line 1415
+PHPUnit\Framework\TestCase::runBare() - ROOT/vendor/phpunit/phpunit/src/Framework/TestCase.php, line 1035
+PHPUnit\Framework\TestResult::run() - ROOT/vendor/phpunit/phpunit/src/Framework/TestResult.php, line 691
+PHPUnit\Framework\TestCase::run() - ROOT/vendor/phpunit/phpunit/src/Framework/TestCase.php, line 763
+PHPUnit\Framework\TestSuite::run() - ROOT/vendor/phpunit/phpunit/src/Framework/TestSuite.php, line 597
+PHPUnit\Framework\TestSuite::run() - ROOT/vendor/phpunit/phpunit/src/Framework/TestSuite.php, line 597
+PHPUnit\TextUI\TestRunner::doRun() - ROOT/vendor/phpunit/phpunit/src/TextUI/TestRunner.php, line 627
+PHPUnit\TextUI\Command::run() - ROOT/vendor/phpunit/phpunit/src/TextUI/Command.php, line 204
+PHPUnit\TextUI\Command::main() - ROOT/vendor/phpunit/phpunit/src/TextUI/Command.php, line 163
+[main] - ROOT/vendor/phpunit/phpunit/phpunit, line 61
+
+2020-09-08 10:23:17 Notice: Notice (8): Undefined variable: iteration in [/var/www/html/cff-performance/tests/TestCase/UniqueStaticFixturesTest.php, line 28]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+App\Test\TestCase\UniqueStaticFixturesTest::testUniqueStaticFixtures() - ROOT/tests/TestCase/UniqueStaticFixturesTest.php, line 28
+PHPUnit\Framework\TestCase::runTest() - ROOT/vendor/phpunit/phpunit/src/Framework/TestCase.php, line 1415
+PHPUnit\Framework\TestCase::runBare() - ROOT/vendor/phpunit/phpunit/src/Framework/TestCase.php, line 1035
+PHPUnit\Framework\TestResult::run() - ROOT/vendor/phpunit/phpunit/src/Framework/TestResult.php, line 691
+PHPUnit\Framework\TestCase::run() - ROOT/vendor/phpunit/phpunit/src/Framework/TestCase.php, line 763
+PHPUnit\Framework\TestSuite::run() - ROOT/vendor/phpunit/phpunit/src/Framework/TestSuite.php, line 597
+PHPUnit\Framework\TestSuite::run() - ROOT/vendor/phpunit/phpunit/src/Framework/TestSuite.php, line 597
+PHPUnit\TextUI\TestRunner::doRun() - ROOT/vendor/phpunit/phpunit/src/TextUI/TestRunner.php, line 627
+PHPUnit\TextUI\Command::run() - ROOT/vendor/phpunit/phpunit/src/TextUI/Command.php, line 204
+PHPUnit\TextUI\Command::main() - ROOT/vendor/phpunit/phpunit/src/TextUI/Command.php, line 163
+[main] - ROOT/vendor/phpunit/phpunit/phpunit, line 61
+
