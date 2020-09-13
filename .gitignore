@@ -5,4 +5,5 @@
 cff_analysis
 test_cff_analysis
 default
+test_default
 composer.lock

@@ -67,7 +67,7 @@ return [
             //'port' => 'non_standard_port_number',
             'username' => 'root',
             'password' => 'root',
-            'database' => 'default',
+            'database' => 'test_default',
             //'schema' => 'myapp',
             'url' => env('DATABASE_TEST_URL', null),
         ],
