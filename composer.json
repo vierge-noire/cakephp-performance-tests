@@ -27,6 +27,6 @@
         }
     },
     "scripts": {
-        "run-tests": "bash run_tests.sh",
+        "run-tests": "bash run_tests.sh"
     }
 }
