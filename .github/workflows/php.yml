@@ -18,7 +18,7 @@ jobs:
         number-of-tables: ['100']
         number-of-tests: ['30']
 
-    name: PHP 7.4 & ${{ number-of-tables }} Tables & ${{ number-of-tests }} Tests
+    name: PHP 7.4 & ${{ matrix.number-of-tables }} Tables & ${{ matrix.number-of-tests }} Tests
 
     steps:
       - uses: actions/checkout@v2
