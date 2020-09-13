@@ -107,11 +107,27 @@ Iter 100
 ##################################
 Standard case: 10 tables per Test Case, 100 tables altogether (repeat 100) 30 tests (fixtures) per TestCase
 vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat 100
-6.82 minutes
+409.3
 
 vendor/bin/phpunit --testsuite d --repeat 100 && vendor/bin/phpunit --testsuite dp --repeat 100
 Iter 100
 32.31 2.23 minutes
+
+##################################
+Standard case in CakePHP3: 10 tables per Test Case, 100 tables altogether (repeat 100) 30 tests (fixtures) per TestCase
+vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat 100
+Iter 100
+369.6
+
+vendor/bin/phpunit --testsuite d --repeat 100 && vendor/bin/phpunit --testsuite dp --repeat 100
+Iter 100
+85.8 11,48 minutes
+
+
+
+
+
+
 
 ##################################
 Standard case: 10 tables per Test Case, 100 tables altogether (repeat 100) 50 tests (fixtures) per TestCase
