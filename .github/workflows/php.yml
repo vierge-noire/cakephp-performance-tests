@@ -46,11 +46,5 @@ jobs:
       - name: Create DB
         run: sudo service mysql start && mysql -h 127.0.0.1 -u root -proot -e 'CREATE DATABASE IF NOT EXISTS test_default;';
 
-      - name: Test DB
-        run: mysql -h 127.0.0.1 -u root -proot -e 'use test_default; show tables;';
-
-      - name: Test DB2
-        run: mysql -h mysql -u root -proot -e 'use test_default; show tables;';
-
       - name: Run tests
-        run: composer run-tests ${{ matrix.number-of-tests }}
+        run: composer run-tests ${{ matrix.number-of-tests }} 127.0.0.1
