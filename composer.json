@@ -3,6 +3,7 @@
     "description": "Performance Analysis of the CakePHP Fixture Factories plugin.",
     "type": "project",
     "require": {
+        "friendsofcake/fixturize": "dev-master",
         "pakacuda/cakephp-fixture-factories": "^0.1.0",
         "phpunit/phpunit": "^6.0"
     },

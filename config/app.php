@@ -196,7 +196,7 @@ return [
          */
         'default' => [
             'className' => Connection::class,
-            'driver' => \Cake\Database\Driver\Sqlite::class,
+            'driver' => \Cake\Database\Driver\Mysql::class,
             'persistent' => false,
             'timezone' => 'UTC',
 
@@ -239,7 +239,7 @@ return [
          */
         'test' => [
             'className' => Connection::class,
-            'driver' => \Cake\Database\Driver\Sqlite::class,
+            'driver' => \Cake\Database\Driver\Mysql::class,
             'persistent' => false,
             'timezone' => 'UTC',
 

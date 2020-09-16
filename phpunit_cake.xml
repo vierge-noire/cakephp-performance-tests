@@ -7,12 +7,12 @@
   <!-- Add any additional test suites you want to run here -->
   <testsuites>
     <testsuite name="s">
-<!--      <directory>tests/TestCase/</directory>-->
       <file>tests/TestCase/StaticFixturesTest.php</file>
     </testsuite>
-    <!-- Add plugin test suites here. -->
+    <testsuite name="sf">
+      <file>tests/TestCase/StaticFixturesFixturizedTest.php</file>
+    </testsuite>
   </testsuites>
-  <!-- Setup a listener for fixtures -->
   <listeners>
       <listener class="Cake\TestSuite\Fixture\FixtureInjector">
           <arguments>

@@ -15,10 +15,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        number-of-tables: ['100']
-        number-of-tests: ['30']
+        number-of-tables: ['10']
+        number-of-tests: ['10', '20', '30', '40', '50']
 
-    name: PHP 7.4 & ${{ matrix.number-of-tables }} Tables & ${{ matrix.number-of-tests }} Tests
+    name: PHP 7.4 & ${{ matrix.number-of-tables }} Tables & ${{ matrix.number-of-tests }} Records
 
     steps:
       - uses: actions/checkout@v2
@@ -37,8 +37,11 @@ jobs:
       - name: Validate composer.json
         run: composer validate
 
+      - name: Extend timeout
+        run: composer --global config process-timeout 2000
+
       - name: Install dependencies
         run: composer update --prefer-dist --no-progress --no-suggest --prefer-stable
 
       - name: Run tests
-        run: composer run-tests
+        run: composer run-tests ${{ matrix.number-of-tests }}

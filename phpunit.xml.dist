@@ -7,16 +7,16 @@
   <!-- Add any additional test suites you want to run here -->
   <testsuites>
     <testsuite name="d">
-<!--      <directory>tests/TestCase/</directory>-->
         <file>tests/TestCase/DynamicFixturesTest.php</file>
     </testsuite>
     <testsuite name="dp">
-<!--      <directory>tests/TestCase/</directory>-->
         <file>tests/TestCase/DynamicFixturesPersistedTest.php</file>
     </testsuite>
     <testsuite name="s">
-<!--      <directory>tests/TestCase/</directory>-->
       <file>tests/TestCase/StaticFixturesTest.php</file>
+    </testsuite>
+    <testsuite name="sf">
+      <file>tests/TestCase/StaticFixturesFixturizedTest.php</file>
     </testsuite>
     <!-- Add plugin test suites here. -->
   </testsuites>

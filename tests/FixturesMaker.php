@@ -17,15 +17,29 @@ namespace App\Test;
 
 class FixturesMaker
 {
-    const NUMBER_OF_TABLES = 100;
+    const NUMBER_OF_TABLES = 10;
     const NUMBER_OF_TABLES_PER_TEST = 10;
-    const NUMBER_OF_TESTS = 30;
 
     public static function numberOfTestsIterator()
     {
+        $numberOfTests = getenv('NUMBER_OF_TESTS_PER_CLASS');
         $result = [];
-        for ($i=0; $i<self::NUMBER_OF_TESTS; $i++) {
+        for ($i=0; $i<$numberOfTests; $i++) {
             $result[] = [$i];
+        }
+        return $result;
+    }
+
+    public static function makeRecords()
+    {
+        $numberOfRecordsPerFixtures = getenv('NUMBER_OF_RECORDS_PER_FIXTURE');
+        $result = [];
+        for ($i=0; $i<$numberOfRecordsPerFixtures; $i++) {
+            $result[$i] = [
+                'name' => 'Lorem ipsum dolor sit amet',
+                'created' => 1599835366,
+                'modified' => 1599835366,
+            ];
         }
         return $result;
     }
