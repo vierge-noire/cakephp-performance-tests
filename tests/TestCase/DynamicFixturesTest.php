@@ -24,9 +24,7 @@ class DynamicFixturesTest extends TestCase
      */
     public function testDynamicFixtures(int $iteration)
     {
-        for ($i=0; $i<FixturesMaker::NUMBER_OF_TABLES_PER_TEST; $i++) {
-            $entity = Table0Factory::make()->getEntity();
-        }
-        $this->assertInstanceOf(Entity::class, $entity);
+        $entities = Table0Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
+        $this->assertInstanceOf(Entity::class, $entities[0]);
     }
 }
