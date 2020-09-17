@@ -15,6 +15,9 @@ declare(strict_types=1);
 namespace App\Test;
 
 
+use Cake\ORM\TableRegistry;
+use phpDocumentor\Reflection\Types\Self_;
+
 class FixturesMaker
 {
     const NUMBER_OF_TABLES = 10;
@@ -42,5 +45,15 @@ class FixturesMaker
             ];
         }
         return $result;
+    }
+
+    public static function dirtAllTables()
+    {
+        for ($i=0; $i<self::NUMBER_OF_TABLES; $i++) {
+            $Table        = TableRegistry::getTableLocator()->get("Table$i" . "s");
+            $entity       = $Table->get(1);
+            $entity->name = $entity->name . '_mofified';
+            $Table->saveOrFail($entity);
+        }
     }
 }
