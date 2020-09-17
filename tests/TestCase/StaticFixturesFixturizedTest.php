@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase;
 
+use App\Test\Factory\Table0Factory;
 use App\Test\FixtureFixturized\Table0sFixture;
 use App\Test\FixtureFixturized\Table1sFixture;
 use App\Test\FixtureFixturized\Table2sFixture;
@@ -17,12 +18,15 @@ use App\Test\FixturesMaker;
 use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
+use CakephpFixtureFactories\TestSuite\SkipTablesTruncation;
 
 /**
  * App\Model\Table\Table0 Test Case
  */
 class StaticFixturesFixturizedTest extends TestCase
 {
+    use SkipTablesTruncation;
+
     public $fixtures = [
         Table0sFixture::class,
         Table1sFixture::class,
@@ -46,7 +50,9 @@ class StaticFixturesFixturizedTest extends TestCase
      */
     public function testStaticFixturizedFixtures(int $iteration)
     {
-        $entity = TableRegistry::getTableLocator()->get("Table0s")->get($iteration+1);
-        $this->assertInstanceOf(Entity::class, $entity);
+        $this->assertSame(
+            (int) getenv('NUMBER_OF_RECORDS_PER_FIXTURE'),
+            TableRegistry::getTableLocator()->get('Table0s')->find()->count()
+        );
     }
 }

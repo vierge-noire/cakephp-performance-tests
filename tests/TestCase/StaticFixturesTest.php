@@ -17,6 +17,7 @@ use App\Test\FixturesMaker;
 use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
+use CakephpFixtureFactories\TestSuite\SkipTablesTruncation;
 
 /**
  * App\Model\Table\Table0 Test Case
@@ -46,8 +47,9 @@ class StaticFixturesTest extends TestCase
      */
     public function testStaticFixtures(int $iteration)
     {
-
-        $entity = TableRegistry::getTableLocator()->get("Table0s")->get($iteration+1);
-        $this->assertInstanceOf(Entity::class, $entity);
+        $this->assertSame(
+            (int) getenv('NUMBER_OF_RECORDS_PER_FIXTURE'),
+            TableRegistry::getTableLocator()->get('Table0s')->find()->count()
+        );
     }
 }

@@ -6,6 +6,7 @@ namespace App\Test\TestCase;
 use App\Test\Factory\Table0Factory;
 use App\Test\FixturesMaker;
 use Cake\ORM\Entity;
+use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
@@ -24,7 +25,10 @@ class DynamicFixturesPersistedTest extends TestCase
      */
     public function testDynamicFixtures(int $iteration)
     {
-        $entities = Table0Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $this->assertInstanceOf(Entity::class, $entities[0]);
+        Table0Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
+        $this->assertSame(
+            FixturesMaker::NUMBER_OF_TABLES_PER_TEST,
+            TableRegistry::getTableLocator()->get('Table0s')->find()->count()
+        );
     }
 }
