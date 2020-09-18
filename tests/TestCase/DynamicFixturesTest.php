@@ -33,17 +33,16 @@ class DynamicFixturesTest extends TestCase
      */
     public function testDynamicFixtures(int $iteration)
     {
-        $entities = Table0Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $entities = Table1Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $entities = Table2Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $entities = Table3Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $entities = Table4Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $entities = Table5Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $entities = Table6Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $entities = Table7Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $entities = Table8Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $entities = Table9Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->getEntities();
-        $this->assertSame(FixturesMaker::NUMBER_OF_TABLES_PER_TEST, count($entities));
-        $this->assertInstanceOf(Entity::class, $entities[0]);
+        Table0Factory::make()->getEntity();
+        Table1Factory::make()->getEntity();
+        Table2Factory::make()->getEntity();
+        Table3Factory::make()->getEntity();
+        Table4Factory::make()->getEntity();
+        Table5Factory::make()->getEntity();
+        Table6Factory::make()->getEntity();
+        Table7Factory::make()->getEntity();
+        Table8Factory::make()->getEntity();
+        $entity = Table9Factory::make()->getEntity();
+        $this->assertInstanceOf(Entity::class, $entity);
     }
 }

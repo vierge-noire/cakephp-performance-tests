@@ -33,18 +33,18 @@ class DynamicFixturesPersistedTest extends TestCase
      */
     public function testDynamicFixtures(int $iteration)
     {
-        $entities = Table0Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $entities = Table1Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $entities = Table2Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $entities = Table3Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $entities = Table4Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $entities = Table5Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $entities = Table6Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $entities = Table7Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $entities = Table8Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
-        $entities = Table9Factory::make(FixturesMaker::NUMBER_OF_TABLES_PER_TEST)->persist();
+        Table0Factory::make()->persist();
+        Table1Factory::make()->persist();
+        Table2Factory::make()->persist();
+        Table3Factory::make()->persist();
+        Table4Factory::make()->persist();
+        Table5Factory::make()->persist();
+        Table6Factory::make()->persist();
+        Table7Factory::make()->persist();
+        Table8Factory::make()->persist();
+        Table9Factory::make()->persist();
         $this->assertSame(
-            FixturesMaker::NUMBER_OF_TABLES_PER_TEST,
+            1,
             TableRegistry::getTableLocator()->get('Table0s')->find()->count()
         );
         FixturesMaker::dirtAllTables();
