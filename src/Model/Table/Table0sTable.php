@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
+use App\Test\FixturesMaker;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
@@ -44,6 +45,12 @@ class Table0sTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+
+        for ($i=1;$i<FixturesMaker::NUMBER_OF_TABLES;$i++) {
+            $this->hasOne('Table'.$i.'s')
+                ->setForeignKey('parent_id');
+        }
     }
 
     /**

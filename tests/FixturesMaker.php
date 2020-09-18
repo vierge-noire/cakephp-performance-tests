@@ -15,18 +15,50 @@ declare(strict_types=1);
 namespace App\Test;
 
 
+use Cake\ORM\TableRegistry;
+use phpDocumentor\Reflection\Types\Self_;
+
 class FixturesMaker
 {
-    const NUMBER_OF_TABLES = 100;
+    const NUMBER_OF_TABLES = 10;
     const NUMBER_OF_TABLES_PER_TEST = 10;
-    const NUMBER_OF_TESTS = 30;
 
     public static function numberOfTestsIterator()
     {
+        $numberOfTests = getenv('NUMBER_OF_TESTS_PER_CLASS');
         $result = [];
-        for ($i=0; $i<self::NUMBER_OF_TESTS; $i++) {
+        for ($i=0; $i<$numberOfTests; $i++) {
             $result[] = [$i];
         }
         return $result;
+    }
+
+    public static function makeRecords()
+    {
+        $numberOfRecordsPerFixtures = getenv('NUMBER_OF_RECORDS_PER_FIXTURE');
+        $result = [];
+        for ($i=0; $i<$numberOfRecordsPerFixtures; $i++) {
+            $result[$i] = self::getRecord();
+        }
+        return $result;
+    }
+
+    public static function getRecord(): array
+    {
+        return [
+            'name' => 'Lorem ipsum dolor sit amet',
+            'created' => 1599835366,
+            'modified' => 1599835366,
+        ];
+    }
+
+    public static function dirtAllTables()
+    {
+        for ($i=0; $i<self::NUMBER_OF_TABLES; $i++) {
+            $Table        = TableRegistry::getTableLocator()->get("Table$i" . "s");
+            $entity       = $Table->get(1);
+            $entity->name = $entity->name . '_modified';
+            $Table->saveOrFail($entity);
+        }
     }
 }

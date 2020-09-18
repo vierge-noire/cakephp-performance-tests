@@ -3,16 +3,17 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase;
 
-use App\Test\Fixture\Table0sFixture;
-use App\Test\Fixture\Table1sFixture;
-use App\Test\Fixture\Table2sFixture;
-use App\Test\Fixture\Table3sFixture;
-use App\Test\Fixture\Table4sFixture;
-use App\Test\Fixture\Table5sFixture;
-use App\Test\Fixture\Table6sFixture;
-use App\Test\Fixture\Table7sFixture;
-use App\Test\Fixture\Table8sFixture;
-use App\Test\Fixture\Table9sFixture;
+use App\Test\Factory\Table0Factory;
+use App\Test\FixtureFixturized\Table0sFixture;
+use App\Test\FixtureFixturized\Table1sFixture;
+use App\Test\FixtureFixturized\Table2sFixture;
+use App\Test\FixtureFixturized\Table3sFixture;
+use App\Test\FixtureFixturized\Table4sFixture;
+use App\Test\FixtureFixturized\Table5sFixture;
+use App\Test\FixtureFixturized\Table6sFixture;
+use App\Test\FixtureFixturized\Table7sFixture;
+use App\Test\FixtureFixturized\Table8sFixture;
+use App\Test\FixtureFixturized\Table9sFixture;
 use App\Test\FixturesMaker;
 use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
@@ -22,8 +23,10 @@ use CakephpFixtureFactories\TestSuite\SkipTablesTruncation;
 /**
  * App\Model\Table\Table0 Test Case
  */
-class StaticFixturesTest extends TestCase
+class StaticFixturesFixturizedTest extends TestCase
 {
+    use SkipTablesTruncation;
+
     public $fixtures = [
         Table0sFixture::class,
         Table1sFixture::class,
@@ -45,7 +48,7 @@ class StaticFixturesTest extends TestCase
     /**
      * @dataProvider numberOfIteration
      */
-    public function testStaticFixtures(int $iteration)
+    public function testStaticFixturizedFixtures(int $iteration)
     {
         $this->assertSame(
             (int) getenv('NUMBER_OF_RECORDS_PER_FIXTURE'),

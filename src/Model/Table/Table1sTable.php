@@ -44,6 +44,10 @@ class Table1sTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsTo('Table0s', [
+            'foreignKey' => 'parent_id',
+        ]);
     }
 
     /**

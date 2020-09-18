@@ -5,6 +5,7 @@ namespace App\Test\TestCase;
 
 
 use App\Test\Fixture\Table0sFixture;
+use App\Test\FixturesMaker;
 use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
@@ -23,5 +24,6 @@ class UniqueStaticFixturesTest extends TestCase
     {
         $entity = TableRegistry::getTableLocator()->get("Table0s")->get(1);
         $this->assertInstanceOf(Entity::class, $entity);
+        FixturesMaker::dirtAllTables();
     }
 }
