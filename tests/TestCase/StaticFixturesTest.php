@@ -51,6 +51,5 @@ class StaticFixturesTest extends TestCase
             (int) getenv('NUMBER_OF_RECORDS_PER_FIXTURE'),
             TableRegistry::getTableLocator()->get('Table0s')->find()->count()
         );
-        FixturesMaker::dirtAllTables();
     }
 }

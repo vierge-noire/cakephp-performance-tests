@@ -29,6 +29,11 @@ class InitialMigration extends AbstractMigration
                     'null' => false,
                     'default' => "Default name for table $i",
                 ])
+                ->addColumn('parent_id', 'integer', [
+                    'default' => null,
+                    'limit' => 11,
+                    'null' => true,
+                ])
                 ->addTimestamps('created', 'modified')
                 ->create();
         }

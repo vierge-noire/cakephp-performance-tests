@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Test\Factory;
 
+use App\Test\FixturesMaker;
 use Faker\Generator;
 use CakephpFixtureFactories\Factory\BaseFactory as CakephpBaseFactory;
 
@@ -28,11 +29,7 @@ class Table5Factory extends CakephpBaseFactory
     protected function setDefaultTemplate(): void
     {
         $this->setDefaultData(function(Generator $faker) {
-            return [
-                // set the model's default values
-                // For example:
-                // 'name' => $faker->lastName
-            ];
+            return FixturesMaker::getRecord();
         });
     }
 

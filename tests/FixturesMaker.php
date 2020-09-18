@@ -38,13 +38,18 @@ class FixturesMaker
         $numberOfRecordsPerFixtures = getenv('NUMBER_OF_RECORDS_PER_FIXTURE');
         $result = [];
         for ($i=0; $i<$numberOfRecordsPerFixtures; $i++) {
-            $result[$i] = [
-                'name' => 'Lorem ipsum dolor sit amet',
-                'created' => 1599835366,
-                'modified' => 1599835366,
-            ];
+            $result[$i] = self::getRecord();
         }
         return $result;
+    }
+
+    public static function getRecord(): array
+    {
+        return [
+            'name' => 'Lorem ipsum dolor sit amet',
+            'created' => 1599835366,
+            'modified' => 1599835366,
+        ];
     }
 
     public static function dirtAllTables()
@@ -52,7 +57,7 @@ class FixturesMaker
         for ($i=0; $i<self::NUMBER_OF_TABLES; $i++) {
             $Table        = TableRegistry::getTableLocator()->get("Table$i" . "s");
             $entity       = $Table->get(1);
-            $entity->name = $entity->name . '_mofified';
+            $entity->name = $entity->name . '_modified';
             $Table->saveOrFail($entity);
         }
     }

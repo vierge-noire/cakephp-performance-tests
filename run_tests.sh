@@ -29,14 +29,29 @@ vendor/bin/phpunit --testsuite d --repeat $REPEAT
 echo "Dynamic persisted fixtures"
 vendor/bin/phpunit --testsuite dp --repeat $REPEAT
 
+echo "Dynamic persisted fixtures dirty"
+vendor/bin/phpunit --testsuite dpd --repeat $REPEAT
+
 echo "Static fixtures"
 vendor/bin/phpunit --testsuite s --repeat $REPEAT
 
+echo "Static fixtures dirty"
+vendor/bin/phpunit --testsuite sd --repeat $REPEAT
+
 echo "Static fixtures with Cake native listener"
 vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat $REPEAT
+
+echo "Static fixtures with Cake native listener dirty"
+vendor/bin/phpunit --testsuite sd --configuration phpunit_cake.xml --repeat $REPEAT
 
 echo "Static fixtures fixturized"
 vendor/bin/phpunit --testsuite sf --repeat $REPEAT
 
 echo "Static fixtures fixturized with Cake native listener"
 vendor/bin/phpunit --testsuite sf --configuration phpunit_cake.xml --repeat $REPEAT
+
+echo "Static fixtures fixturized dirty"
+vendor/bin/phpunit --testsuite sfd --repeat $REPEAT
+
+echo "Static fixtures fixturized with Cake native listener dirty"
+vendor/bin/phpunit --testsuite sfd --configuration phpunit_cake.xml --repeat $REPEAT

@@ -33,20 +33,15 @@ class DynamicFixturesPersistedTest extends TestCase
      */
     public function testDynamicFixtures(int $iteration)
     {
-        Table0Factory::make()->persist();
-        Table1Factory::make()->persist();
-        Table2Factory::make()->persist();
-        Table3Factory::make()->persist();
-        Table4Factory::make()->persist();
-        Table5Factory::make()->persist();
-        Table6Factory::make()->persist();
-        Table7Factory::make()->persist();
-        Table8Factory::make()->persist();
-        Table9Factory::make()->persist();
+        $factory = Table0Factory::make();
+        for ($i=1;$i<FixturesMaker::NUMBER_OF_TABLES;$i++) {
+            $factory->with('Table'.$i.'s');
+        }
+        $factory->persist();
+
         $this->assertSame(
             1,
-            TableRegistry::getTableLocator()->get('Table0s')->find()->count()
+            TableRegistry::getTableLocator()->get('Table9s')->find()->count()
         );
-        FixturesMaker::dirtAllTables();
     }
 }

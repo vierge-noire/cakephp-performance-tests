@@ -9,8 +9,14 @@
     <testsuite name="s">
       <file>tests/TestCase/StaticFixturesTest.php</file>
     </testsuite>
+    <testsuite name="sd">
+      <file>tests/TestCase/StaticFixturesTest.php</file>
+    </testsuite>
     <testsuite name="sf">
       <file>tests/TestCase/StaticFixturesFixturizedTest.php</file>
+    </testsuite>
+    <testsuite name="sfd">
+      <file>tests/TestCase/StaticFixturesFixturizedDirtyTest.php</file>
     </testsuite>
   </testsuites>
   <listeners>
