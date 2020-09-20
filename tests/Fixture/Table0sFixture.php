@@ -34,7 +34,7 @@ class Table0sFixture extends TestFixture
      *
      * @return void
      */
-    public function init()
+    public function init(): void
     {
         $this->records = FixturesMaker::makeRecords();
         parent::init();
