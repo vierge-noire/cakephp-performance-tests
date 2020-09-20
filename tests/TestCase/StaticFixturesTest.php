@@ -14,7 +14,6 @@ use App\Test\Fixture\Table7sFixture;
 use App\Test\Fixture\Table8sFixture;
 use App\Test\Fixture\Table9sFixture;
 use App\Test\FixturesMaker;
-use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 use CakephpFixtureFactories\TestSuite\SkipTablesTruncation;
@@ -24,6 +23,8 @@ use CakephpFixtureFactories\TestSuite\SkipTablesTruncation;
  */
 class StaticFixturesTest extends TestCase
 {
+    use SkipTablesTruncation;
+
     public $fixtures = [
         Table0sFixture::class,
         Table1sFixture::class,
