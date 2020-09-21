@@ -24,6 +24,6 @@ class UniqueStaticFixturesTest extends TestCase
     {
         $entity = TableRegistry::getTableLocator()->get("Table0s")->get(1);
         $this->assertInstanceOf(Entity::class, $entity);
-        FixturesMaker::dirtAllTables();
+        FixturesMaker::dirtTables();
     }
 }

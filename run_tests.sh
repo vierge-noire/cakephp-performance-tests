@@ -23,35 +23,30 @@ export NUMBER_OF_TESTS_PER_CLASS=$NUMBER_OF_TESTS_PER_CLASS
 
 echo "Starting PHPUNIT tests"
 
-echo "Dynamic fixtures"
-vendor/bin/phpunit --testsuite d --repeat $REPEAT
-
-echo "Dynamic persisted fixtures"
-vendor/bin/phpunit --testsuite dp --repeat $REPEAT
-
-echo "Dynamic persisted fixtures dirty"
-vendor/bin/phpunit --testsuite dpd --repeat $REPEAT
+echo "Static fixtures, native listener"
+vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat $REPEAT
 
 echo "Static fixtures"
 vendor/bin/phpunit --testsuite s --repeat $REPEAT
 
-echo "Static fixtures dirty"
-vendor/bin/phpunit --testsuite sd --repeat $REPEAT
+echo "Dynamic fixtures"
+vendor/bin/phpunit --testsuite d --repeat $REPEAT
 
-echo "Static fixtures with Cake native listener"
-vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat $REPEAT
+for i in 0 2 5 10
+do
+  export NUMBER_OF_DIRTY_TABLES=$i
 
-echo "Static fixtures with Cake native listener dirty"
-vendor/bin/phpunit --testsuite sd --configuration phpunit_cake.xml --repeat $REPEAT
+  echo "Dynamic persisted fixtures, $i dirty tables"
+  vendor/bin/phpunit --testsuite dpd --repeat $REPEAT
 
-echo "Static fixtures fixturized"
-vendor/bin/phpunit --testsuite sf --repeat $REPEAT
+  echo "Static fixtures fixturized, $i dirty tables"
+  vendor/bin/phpunit --testsuite sfd --repeat $REPEAT
+done
 
-echo "Static fixtures fixturized with Cake native listener"
-vendor/bin/phpunit --testsuite sf --configuration phpunit_cake.xml --repeat $REPEAT
+for i in 0 2 5 10
+do
+  export NUMBER_OF_DIRTY_TABLES=$i
 
-echo "Static fixtures fixturized dirty"
-vendor/bin/phpunit --testsuite sfd --repeat $REPEAT
-
-echo "Static fixtures fixturized with Cake native listener dirty"
-vendor/bin/phpunit --testsuite sfd --configuration phpunit_cake.xml --repeat $REPEAT
+  echo "Static fixtures fixturized, Cake native listener, $i dirty tables"
+  vendor/bin/phpunit --testsuite sfd --configuration phpunit_cake.xml --repeat $REPEAT
+done

@@ -28,6 +28,6 @@ class DynamicFixturesPersistedDirtyTest extends DynamicFixturesPersistedTest
     public function testDynamicFixtures(int $iteration)
     {
         parent::testDynamicFixtures($iteration);
-        FixturesMaker::dirtAllTables();
+        FixturesMaker::dirtTables();
     }
 }

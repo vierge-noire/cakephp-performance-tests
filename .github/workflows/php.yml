@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         number-of-tables: ['10']
-        number-of-tests: ['10', '20', '30', '40', '50']
+        number-of-tests: ['10', '20', '30']
 
     name: PHP 7.4 & ${{ matrix.number-of-tables }} Tables & ${{ matrix.number-of-tests }} Records
 

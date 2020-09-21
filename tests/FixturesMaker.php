@@ -15,8 +15,7 @@ declare(strict_types=1);
 namespace App\Test;
 
 
-use Cake\ORM\TableRegistry;
-use phpDocumentor\Reflection\Types\Self_;
+use Cake\Datasource\ConnectionManager;
 
 class FixturesMaker
 {
@@ -52,13 +51,13 @@ class FixturesMaker
         ];
     }
 
-    public static function dirtAllTables()
+    public static function dirtTables()
     {
-        for ($i=0; $i<self::NUMBER_OF_TABLES; $i++) {
-            $Table        = TableRegistry::getTableLocator()->get("Table$i" . "s");
-            $entity       = $Table->get(1);
-            $entity->name = $entity->name . '_modified';
-            $Table->saveOrFail($entity);
+        $numberOfDirtyTable = getenv('NUMBER_OF_DIRTY_TABLES');
+
+        for ($i=0; $i<$numberOfDirtyTable; $i++) {
+            $connection = ConnectionManager::get('test');
+            $connection->insert("table$i" . "s", ['name' => 'modified']);
         }
     }
 }

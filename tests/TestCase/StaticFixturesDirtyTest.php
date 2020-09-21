@@ -16,6 +16,6 @@ class StaticFixturesDirtyTest extends StaticFixturesTest
     public function testStaticFixtures(int $iteration)
     {
         parent::testStaticFixtures($iteration);
-        FixturesMaker::dirtAllTables();
+        FixturesMaker::dirtTables();
     }
 }
