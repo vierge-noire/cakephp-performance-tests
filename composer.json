@@ -4,7 +4,7 @@
     "type": "project",
     "require": {
         "friendsofcake/fixturize": "dev-master",
-        "pakacuda/cakephp-fixture-factories": "^0.1.0",
+        "pakacuda/cakephp-fixture-factories": "dev-cake3",
         "phpunit/phpunit": "^6.0"
     },
     "license": "MIT",

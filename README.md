@@ -40,7 +40,8 @@ Optional: dirty
 ### CakePHP 3
 
 Results from [here](https://github.com/pabloelcolombiano/cakephp-performance-tests/actions/runs/263752278)
-run on mysql, PHP 7.4. The numbers given are in seconds.
+run on mysql, PHP 7.4. The numbers given are in seconds. The ratio is the run time of a scenario with N=50
+divided by the "Static, native listener" scenario.
 
 | Number of tests per class (N)             | 10  | 20  | 30  | 40  | 50  | Ratio |
 | ----------------------------------------- | --- | --- | --- | --- | --- | ----- |
@@ -59,14 +60,27 @@ run on mysql, PHP 7.4. The numbers given are in seconds.
 ### CakePHP 4
 
 Results from [here](https://github.com/pabloelcolombiano/cakephp-performance-tests/actions/runs/263747014)
+run on mysql, PHP 7.4. The numbers given are in seconds.  The ratio is the run time of a scenario with N=50
+divided by the "Static, native listener" scenario.
+
+| Number of tests per class (N)             | 10  | 20  | 30  | 40  | 50  | Ratio |
+| ----------------------------------------- | --- | --- | --- | --- | --- | ----- |
+| Dynamic                                   | 3.1 | 8.9 | 11  | 15  | 19  | 4.8   |
+| Dynamic persisted                         | 8.0 | 22  | 28  | 36  | 44  | 2.1   |
+| Static                                    | 6.2 | 21  | 35  | 68  | 92  | 1.0   |
+| Static, native listener                   | 5.7 | 21  | 36  | 69  | 91  | 1     |
+
+### Fixturize plugin in depth
+
+Results from [here](https://github.com/pabloelcolombiano/cakephp-performance-tests/actions/runs/263747014)
 run on mysql, PHP 7.4. The numbers given are in seconds.
 
 | Number of tests per class (N)             | 10  | 20  | 30  | 40  | 50  | Ratio |
 | ----------------------------------------- | --- | --- | --- | --- | --- | ----- |
 | Dynamic                                   | 3.1 | 8.9 | 11  | 15  | 19  | 4.8   |
 | Dynamic persisted                         | 8.0 | 22  | 28  | 36  | 44  | 2.1   |
-| Static                                    | 6.2 | 21  | 35  | 68  | 92  | 1     |
-| Static, native listener                   | 5.7 | 21  | 36  | 69  | 91  | 1.0   |
+| Static                                    | 6.2 | 21  | 35  | 68  | 92  | 1.0   |
+| Static, native listener                   | 5.7 | 21  | 36  | 69  | 91  | 1     |
 
 ## Conclusion
 
