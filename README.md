@@ -42,38 +42,38 @@ Optional: dirty
 Results from [here](https://github.com/pabloelcolombiano/cakephp-performance-tests/actions/runs/275716897)
 run on mysql, PHP 7.4. The numbers given are in seconds.
 
-| Number of tests per class (N)             | 10  | 20  | 30  | 40  | 50  | Ratio |
-| ----------------------------------------- | --- | --- | --- | --- | --- | ----- |
-| Dynamic                                   | 3.1 | 6.5 | 9.9 | 12  | 16  | 7.4   |
-| Dynamic persisted                         | 8.4 | 17  | 24  | 29  | 42  | 2.8   |
-| Static                                    | 7.0 | 20  | 36  | 67  | 100 | 1.2   |
-| Static, legacy listener                   | 11  | 26  | 45  | 79  | 119 | 1     |
+| Number of tests per class (N)             | 10  | 20  | 30  | 40  | 50  | 60   | Ratio |
+| ----------------------------------------- | --- | --- | --- | --- | --- | ---  | ----- |
+| Dynamic                                   | 0.6 | 1.0 | 1.6 | 2.0 | 2.2 | 2.6  | 60    |
+| Dynamic persisted                         | 5.4 | 9.1 | 23  | 28  | 23  | 24   | 6.5   |
+| Static                                    | 7.7 | 16  | 45  | 77  | 100 | 135  | 1.1   |
+| Static, legacy listener                   | 9.0 | 21  | 58  | 92  | 109 | 155  | 1     |
 
 ### CakePHP 4
 
 Results from [here](https://github.com/pabloelcolombiano/cakephp-performance-tests/actions/runs/275717326)
 run on mysql, PHP 7.4. The numbers given are in seconds.
 
-| Number of tests per class (N)             | 10  | 20  | 30  | 40  | 50  | Ratio |
-| ----------------------------------------- | --- | --- | --- | --- | --- | ----- |
-| Dynamic                                   | 2.8 | 6.5 | 9.4 | 14  | 14  | 7.1   |
-| Dynamic persisted                         | 6.5 | 15  | 24  | 33  | 33  | 3.0   |
-| Static                                    | 5.9 | 18  | 36  | 69  | 99  | 1.0   |
-| Static, legacy listener                   | 6.2 | 18  | 37  | 75  | 100 | 1     |
+| Number of tests per class (N)             | 10  | 20  | 30  | 40  | 50  | 60   | Ratio |
+| ----------------------------------------- | --- | --- | --- | --- | --- | ---  | ----- |
+| Dynamic                                   | 0.6 | 1.1 | 1.6 | 1.9 | 2.7 | 2.7  | 53    |
+| Dynamic persisted                         | 7.2 | 10  | 15  | 24  | 26  | 36   | 4.0   |
+| Static                                    | 7.8 | 19  | 37  | 64  | 102 | 139  | 1.0   |
+| Static, legacy listener                   | 7.7 | 19  | 38  | 64  | 100 | 143  | 1     |
 
 ### Fixturize plugin
 
 Results from [here](https://github.com/pabloelcolombiano/cakephp-performance-tests/actions/runs/275715544)
-run on mysql, PHP 7.4, CakePHP 3.9, with N = 30 tests per class. The numbers given are in seconds. 
+run on mysql, PHP 7.4, CakePHP 3.9, with N = 40 tests per class. The numbers given are in seconds. 
 
 | Number of dirty tables per tests          |  0  |  2  |  5  | 10  |
 | ----------------------------------------- | --- | --- | --- | --- | 
-| Dynamic persisted                         | 22  | 22  | 22  | 23  | 
-| Dynamic                                   | 9.7 | 9.7 | 9.7 | 9.7 |
-| Static fixturized                         | 2.5 | 11  | 23  | 44  | 
-| Static fixturized, legacy listener        | 3.4 | 14  | 29  | 52  | 
-| Static                                    | 38  | 38  | 38  | 38  | 
-| Static, legacy listener                   | 50  | 50  | 50  | 50  | 
+| Dynamic                                   | 1.7 | 1.7 | 1.7 | 1.7 |
+| Dynamic persisted                         | 15  | 15  | 16  | 19  | 
+| Static fixturized                         | 3.2 | 17  | 37  | 74  | 
+| Static fixturized, legacy listener        | 4.2 | 21  | 44  | 82  | 
+| Static                                    | 64  | 64  | 64  | 64  | 
+| Static, legacy listener                   | 76  | 76  | 76  | 76  | 
 
 ## Conclusion
 
