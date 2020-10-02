@@ -7,12 +7,14 @@ use App\Test\Factory\Table0Factory;
 use App\Test\FixturesMaker;
 use Cake\ORM\Entity;
 use Cake\TestSuite\TestCase;
+use CakephpFixtureFactories\TestSuite\SkipTablesTruncation;
 
 /**
  * App\Model\Table\Table0 Test Case
  */
 class DynamicFixturesTest extends TestCase
 {
+    use SkipTablesTruncation;
 
     public function numberOfIteration()
     {
