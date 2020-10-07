@@ -4,8 +4,7 @@
     "type": "project",
     "require": {
         "friendsofcake/fixturize": "dev-master",
-        "phpunit/phpunit": "^6.0",
-        "vierge-noire/cakephp-test-migrator": "^1.0"
+        "phpunit/phpunit": "^6.0"
     },
     "license": "MIT",
     "authors": [
@@ -30,6 +29,7 @@
         "run-tests": "bash run_tests.sh"
     },
     "require-dev": {
-        "pakacuda/cakephp-fixture-factories": "^1.0"
+        "pakacuda/cakephp-fixture-factories": "^1.0",
+        "vierge-noire/cakephp-test-migrator": "^1.0"
     }
 }
