@@ -51,4 +51,4 @@ ConnectionManager::alias('test_debug_kit', 'debug_kit');
 // has been written to.
 session_id('cli');
 
-\CakephpFixtureFactories\TestSuite\Migrator::migrate();
+\CakephpTestMigrator\Migrator::migrate();
