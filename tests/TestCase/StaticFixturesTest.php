@@ -16,7 +16,7 @@ use App\Test\Fixture\Table9sFixture;
 use App\Test\FixturesMaker;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
-use CakephpFixtureFactories\TestSuite\SkipTablesTruncation;
+use CakephpTestSuiteLight\SkipTablesTruncation;
 
 /**
  * App\Model\Table\Table0 Test Case

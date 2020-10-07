@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase;
 
-use App\Test\Factory\Table0Factory;
 use App\Test\FixtureFixturized\Table0sFixture;
 use App\Test\FixtureFixturized\Table1sFixture;
 use App\Test\FixtureFixturized\Table2sFixture;
@@ -15,10 +14,9 @@ use App\Test\FixtureFixturized\Table7sFixture;
 use App\Test\FixtureFixturized\Table8sFixture;
 use App\Test\FixtureFixturized\Table9sFixture;
 use App\Test\FixturesMaker;
-use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
-use CakephpFixtureFactories\TestSuite\SkipTablesTruncation;
+use CakephpTestSuiteLight\SkipTablesTruncation;
 
 /**
  * App\Model\Table\Table0 Test Case
