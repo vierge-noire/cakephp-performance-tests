@@ -44,9 +44,9 @@ return [
              */
             //'port' => 'non_standard_port_number',
 
-            'username' => 'root',
-            'password' => 'root',
-            'database' => 'default',
+            'username' => getenv('DB_USER'),
+            'password' => getenv('DB_PWD'),
+            'database' => getenv('DB_DATABASE'),
             /**
              * If not using the default 'public' schema with the PostgreSQL driver
              * set it here.
@@ -65,9 +65,9 @@ return [
         'test' => [
             'host' => getenv('DB_HOST'),
             //'port' => 'non_standard_port_number',
-            'username' => 'root',
-            'password' => 'root',
-            'database' => 'test_default',
+            'username' => getenv('DB_USER'),
+            'password' => getenv('DB_PWD'),
+            'database' => getenv('DB_DATABASE'),
             //'schema' => 'myapp',
             'url' => env('DATABASE_TEST_URL', null),
         ],

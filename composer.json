@@ -3,7 +3,8 @@
     "description": "Performance Analysis of the CakePHP Fixture Factories plugin.",
     "type": "project",
     "require": {
-        "phpunit/phpunit": "^8.0"
+        "phpunit/phpunit": "^8.0",
+        "josegonzalez/dotenv": "dev-master"
     },
     "license": "MIT",
     "authors": [
