@@ -23,8 +23,6 @@ use CakephpTestSuiteLight\SkipTablesTruncation;
  */
 class StaticFixturesTest extends TestCase
 {
-    use SkipTablesTruncation;
-
     public $fixtures = [
         Table0sFixture::class,
         Table1sFixture::class,

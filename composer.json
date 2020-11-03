@@ -30,6 +30,7 @@
     },
     "require-dev": {
         "vierge-noire/cakephp-fixture-factories": "^2.0",
+        "vierge-noire/cakephp-test-suite-light": "dev-trigger_based_sniffers as v2.0.4",
         "vierge-noire/cakephp-test-migrator": "^2.0"
     }
 }
