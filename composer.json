@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "friendsofcake/fixturize": "dev-master",
-        "phpunit/phpunit": "^6.0"
+        "phpunit/phpunit": "^6.0",
+        "josegonzalez/dotenv": "dev-master"
     },
     "license": "MIT",
     "authors": [

@@ -8,3 +8,4 @@ default
 test_default
 composer.lock
 .phpunit.result.cache
+.env
