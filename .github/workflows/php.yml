@@ -47,4 +47,4 @@ jobs:
         run: sudo service mysql start && mysql -h 127.0.0.1 -u root -proot -e 'CREATE DATABASE IF NOT EXISTS test_default;';
 
       - name: Run tests
-        run: composer run-tests ${{ matrix.number-of-tests }} 127.0.0.1
+        run: composer run-tests Mysql ${{ matrix.number-of-tests }}
