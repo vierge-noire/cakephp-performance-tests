@@ -19,18 +19,19 @@ export NUMBER_OF_RECORDS_PER_FIXTURE=$NUMBER_OF_RECORDS_PER_FIXTURE
 
 
 echo "Starting PHPUNIT tests"
-#
-#echo "Dynamic fixtures"
-#vendor/bin/phpunit --testsuite d --repeat $REPEAT
-#
-#echo "Dynamic persisted fixtures"
-#vendor/bin/phpunit --testsuite dp --repeat $REPEAT
 
-echo "Dynamic persisted fixtures massive"
-vendor/bin/phpunit --testsuite dpm --repeat $REPEAT
-#
-#echo "Static fixtures"
-#vendor/bin/phpunit --testsuite s --repeat $REPEAT
+echo "Dynamic fixtures"
+vendor/bin/phpunit --testsuite d --repeat $REPEAT
 
-#echo "Static fixtures with Cake native listener"
-#vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat $REPEAT
+echo "Dynamic persisted fixtures"
+vendor/bin/phpunit --testsuite dp --repeat $REPEAT
+
+# This test is way too long. Skip it
+#echo "Dynamic persisted fixtures massive"
+#vendor/bin/phpunit --testsuite dpm --repeat $REPEAT
+
+echo "Static fixtures"
+vendor/bin/phpunit --testsuite s --repeat $REPEAT
+
+echo "Static fixtures with Cake native listener"
+vendor/bin/phpunit --testsuite s --configuration phpunit_cake.xml --repeat $REPEAT
