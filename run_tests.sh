@@ -28,6 +28,9 @@ vendor/bin/phpunit --testsuite d --repeat $REPEAT
 echo "Dynamic persisted fixtures"
 vendor/bin/phpunit --testsuite dp --repeat $REPEAT
 
+echo "Dynamic persisted fixtures"
+vendor/bin/phpunit --testsuite dpm --repeat $REPEAT
+
 echo "Static fixtures"
 vendor/bin/phpunit --testsuite s --repeat $REPEAT
 

@@ -48,7 +48,7 @@ class Table0sTable extends Table
 
 
         for ($i=1;$i<FixturesMaker::NUMBER_OF_TABLES;$i++) {
-            $this->hasOne('Table'.$i.'s')
+            $this->hasMany('Table'.$i.'s')
                 ->setForeignKey('parent_id');
         }
     }
