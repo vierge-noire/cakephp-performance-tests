@@ -12,6 +12,9 @@
     <testsuite name="dp">
         <file>tests/TestCase/DynamicFixturesPersistedTest.php</file>
     </testsuite>
+    <testsuite name="dpm">
+      <file>tests/TestCase/DynamicFixturesPersistedMassiveTest.php</file>
+    </testsuite>
     <testsuite name="s">
       <file>tests/TestCase/StaticFixturesTest.php</file>
     </testsuite>

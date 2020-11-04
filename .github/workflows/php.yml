@@ -16,9 +16,20 @@ jobs:
       fail-fast: false
       matrix:
         number-of-tables: ['10']
-        number-of-tests: ['10', '20', '30', '40', '50', '60']
+        number-of-tests: ['60']
+        db-type: [sqlite, mysql, pgsql]
 
-    name: PHP 7.4 & ${{ matrix.number-of-tables }} Tables & ${{ matrix.number-of-tests }} Records
+    name: PHP 7.4 & ${{ matrix.db-type }} & ${{ matrix.number-of-tables }} Tables & ${{ matrix.number-of-tests }} Records
+
+    services:
+      postgres:
+        image: postgres
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: test_default
+          POSTGRES_PASSWORD: root
+          POSTGRES_USER: root
 
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +38,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
-          extensions: mbstring, intl, apcu, pdo_mysql
+          extensions: mbstring, intl, apcu, pdo_${{ matrix.db-type }}
           ini-values: apc.enable_cli = 1
           coverage: pcov
 
@@ -47,4 +58,4 @@ jobs:
         run: sudo service mysql start && mysql -h 127.0.0.1 -u root -proot -e 'CREATE DATABASE IF NOT EXISTS test_default;';
 
       - name: Run tests
-        run: composer run-tests Mysql ${{ matrix.number-of-tests }}
+        run: composer run-tests-${{ matrix.db-type }} ${{ matrix.number-of-tests }}

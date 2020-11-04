@@ -63,6 +63,10 @@ class Table3sTable extends Table
             ->maxLength('name', 128)
             ->notEmptyString('name');
 
+        $this->belongsTo('Table0s', [
+            'foreignKey' => 'parent_id',
+        ]);
+
         return $validator;
     }
 }

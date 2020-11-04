@@ -35,7 +35,7 @@ class FixturesMaker
 
     public static function makeRecords()
     {
-        $numberOfRecordsPerFixtures = getenv('NUMBER_OF_RECORDS_PER_FIXTURE');
+        $numberOfRecordsPerFixtures = (int) getenv('NUMBER_OF_RECORDS_PER_FIXTURE');
         $result = [];
         for ($i=0; $i<$numberOfRecordsPerFixtures; $i++) {
             $result[$i] = self::getRecord();
