@@ -31,8 +31,8 @@
         "run-tests-sqlite": "bash run_tests.sh Sqlite"
     },
     "require-dev": {
-        "vierge-noire/cakephp-fixture-factories": "dev-next",
-        "vierge-noire/cakephp-test-suite-light": "dev-trigger_based_sniffers",
-        "vierge-noire/cakephp-test-migrator": "dev-next"
+        "vierge-noire/cakephp-fixture-factories": "^2.1",
+        "vierge-noire/cakephp-test-suite-light": "^2.1",
+        "vierge-noire/cakephp-test-migrator": "^2.1"
     }
 }
